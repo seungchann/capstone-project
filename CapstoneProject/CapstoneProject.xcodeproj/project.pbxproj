@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		64639E69282539AF008311D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64639E68282539AF008311D4 /* AppDelegate.swift */; };
-		64639E6B282539AF008311D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64639E6A282539AF008311D4 /* SceneDelegate.swift */; };
 		64639E6D282539AF008311D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64639E6C282539AF008311D4 /* ViewController.swift */; };
 		64639E70282539AF008311D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64639E6E282539AF008311D4 /* Main.storyboard */; };
 		64639E72282539B3008311D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64639E71282539B3008311D4 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		64639E65282539AF008311D4 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64639E68282539AF008311D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64639E6A282539AF008311D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		64639E6C282539AF008311D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		64639E6F282539AF008311D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64639E71282539B3008311D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				64639E68282539AF008311D4 /* AppDelegate.swift */,
-				64639E6A282539AF008311D4 /* SceneDelegate.swift */,
 				64639E6C282539AF008311D4 /* ViewController.swift */,
 				64639E6E282539AF008311D4 /* Main.storyboard */,
 				64639E71282539B3008311D4 /* Assets.xcassets */,
@@ -140,7 +137,6 @@
 			files = (
 				64639E6D282539AF008311D4 /* ViewController.swift in Sources */,
 				64639E69282539AF008311D4 /* AppDelegate.swift in Sources */,
-				64639E6B282539AF008311D4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

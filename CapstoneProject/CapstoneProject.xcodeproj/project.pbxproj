@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		644D9BFA282544E9000C80BB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D9BF9282544E9000C80BB /* Task.swift */; };
 		64639E69282539AF008311D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64639E68282539AF008311D4 /* AppDelegate.swift */; };
 		64639E70282539AF008311D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64639E6E282539AF008311D4 /* Main.storyboard */; };
 		64639E72282539B3008311D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64639E71282539B3008311D4 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		644D9BF9282544E9000C80BB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		64639E65282539AF008311D4 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64639E68282539AF008311D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64639E6F282539AF008311D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		644D9BF728254081000C80BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				644D9BF9282544E9000C80BB /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644D9BFA282544E9000C80BB /* Task.swift in Sources */,
 				64639E69282539AF008311D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MQH3AL8X2Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CapstoneProject/Info.plist;
+				INFOPLIST_FILE = CapstoneProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -349,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MQH3AL8X2Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CapstoneProject/Info.plist;
+				INFOPLIST_FILE = CapstoneProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,20 +8,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeView" customModule="CapstoneProject" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEE-MY-vKC">
+                                <rect key="frame" x="30" y="40" width="122" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O 시간치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEW-xn-pU5" userLabel="remainingTimeLabel">
+                                <rect key="frame" x="30" y="92" width="125" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남았다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmG-xk-gPy">
+                                <rect key="frame" x="175" y="104" width="65" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-c7-Zgb">
+                                <rect key="frame" x="245" y="537" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ejJ-c7-Zgb" secondAttribute="height" multiplier="1:1" id="WOg-yZ-8E5"/>
+                                    <constraint firstAttribute="width" constant="100" id="pOx-7b-JkI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lEE-MY-vKC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="OQQ-Uk-nm9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ejJ-c7-Zgb" secondAttribute="bottom" constant="30" id="U2K-r9-QjV"/>
+                            <constraint firstItem="lEE-MY-vKC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bvD-zT-R9b"/>
+                            <constraint firstItem="aEW-xn-pU5" firstAttribute="leading" secondItem="lEE-MY-vKC" secondAttribute="leading" id="gQq-gV-8Cd"/>
+                            <constraint firstItem="JmG-xk-gPy" firstAttribute="bottom" secondItem="aEW-xn-pU5" secondAttribute="bottom" id="lgJ-qV-1e6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ejJ-c7-Zgb" secondAttribute="trailing" constant="30" id="oYx-IU-36E"/>
+                            <constraint firstItem="aEW-xn-pU5" firstAttribute="top" secondItem="lEE-MY-vKC" secondAttribute="bottom" constant="10" id="qP5-li-ouu"/>
+                            <constraint firstItem="JmG-xk-gPy" firstAttribute="leading" secondItem="aEW-xn-pU5" secondAttribute="trailing" constant="20" id="yie-6b-rjU"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="addTaskButton" destination="ejJ-c7-Zgb" id="Q3Y-eB-qs6"/>
+                            <outlet property="remainingTextLabel" destination="JmG-xk-gPy" id="kr8-4C-LoW"/>
+                            <outlet property="remainingTimeLabel" destination="aEW-xn-pU5" id="jUc-TX-j6N"/>
+                            <outlet property="tomorrowTextLabel" destination="lEE-MY-vKC" id="WYL-Nf-eiW"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="110"/>
+            <point key="canvasLocation" x="138.40000000000001" y="109.29535232383809"/>
         </scene>
     </scenes>
     <resources>

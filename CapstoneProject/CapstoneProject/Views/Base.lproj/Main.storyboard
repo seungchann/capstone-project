@@ -38,21 +38,67 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RPT-NP-yvq">
                                 <rect key="frame" x="0.0" y="154" width="375" height="513"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RrA-3E-r27">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RrA-3E-r27">
+                                    <size key="itemSize" width="368" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="muR-kM-fVE" customClass="TaskCell" customModule="CapstoneProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeTaskCell" id="muR-kM-fVE" customClass="HomeTaskCell" customModule="CapstoneProject" customModuleProvider="target">
+                                        <rect key="frame" x="3.5" y="0.0" width="368" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZpF-NW-dp3">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="368" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KmM-oM-cLL">
+                                                    <rect key="frame" x="15" y="5" width="3" height="118"/>
+                                                    <color key="backgroundColor" red="0.91897267100000002" green="0.2517300844" blue="0.14302992819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="3" id="qWh-nL-a5Z"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캡스톤 앱 구현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWD-xs-3LE">
+                                                    <rect key="frame" x="45" y="8" width="97" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X9C-gP-HNA">
+                                                    <rect key="frame" x="45" y="85" width="240" height="35"/>
+                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="ZlY-BL-KjH"/>
+                                                        <constraint firstAttribute="width" constant="240" id="rE0-eh-XZC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmT-xh-0dX">
+                                                    <rect key="frame" x="45" y="38.5" width="40.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FWD-xs-3LE" firstAttribute="leading" secondItem="KmM-oM-cLL" secondAttribute="leading" constant="30" id="3LV-YG-qLZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="KmM-oM-cLL" secondAttribute="bottom" constant="5" id="3yr-eK-J0m"/>
+                                                <constraint firstItem="FWD-xs-3LE" firstAttribute="top" secondItem="KmM-oM-cLL" secondAttribute="top" constant="3" id="7Zi-Ip-Pua"/>
+                                                <constraint firstItem="X9C-gP-HNA" firstAttribute="leading" secondItem="FWD-xs-3LE" secondAttribute="leading" id="E75-Pr-e0O"/>
+                                                <constraint firstItem="KmM-oM-cLL" firstAttribute="top" secondItem="ZpF-NW-dp3" secondAttribute="top" constant="5" id="KL9-Aa-y65"/>
+                                                <constraint firstItem="X9C-gP-HNA" firstAttribute="bottom" secondItem="KmM-oM-cLL" secondAttribute="bottom" constant="-3" id="MaP-oD-KdL"/>
+                                                <constraint firstItem="kmT-xh-0dX" firstAttribute="leading" secondItem="FWD-xs-3LE" secondAttribute="leading" id="SJ4-qp-LrI"/>
+                                                <constraint firstItem="kmT-xh-0dX" firstAttribute="top" secondItem="FWD-xs-3LE" secondAttribute="bottom" constant="10" id="rQU-SB-nRw"/>
+                                                <constraint firstItem="KmM-oM-cLL" firstAttribute="leading" secondItem="ZpF-NW-dp3" secondAttribute="leading" constant="15" id="vCm-cp-Y5a"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="128" height="128"/>
+                                        <size key="customSize" width="368" height="128"/>
+                                        <connections>
+                                            <outlet property="categoryColorBar" destination="KmM-oM-cLL" id="4vX-YY-bzz"/>
+                                            <outlet property="taskBar" destination="X9C-gP-HNA" id="Upe-9m-DNF"/>
+                                            <outlet property="taskExpectedTimeLabel" destination="kmT-xh-0dX" id="LlL-jL-5W1"/>
+                                            <outlet property="taskNameLabel" destination="FWD-xs-3LE" id="XYl-fu-J2B"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

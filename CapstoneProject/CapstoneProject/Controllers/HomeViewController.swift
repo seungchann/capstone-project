@@ -21,7 +21,6 @@ public class HomeViewController: UIViewController {
         
         homeView.taskCollectionView.delegate = self
         homeView.taskCollectionView.dataSource = self
-        homeView.taskCollectionView.register(TaskCell.nib(), forCellWithReuseIdentifier: TaskCell.identifier)
         
         setupRemainingLabels()
         setupAddTaskButton()
@@ -60,11 +59,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TaskCell.identifier, for: indexPath) as! TaskCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeTaskCell.identifier, for: indexPath) as! HomeTaskCell
+       
+        cell.taskNameLabel.text = "Example Task"
+        cell.taskExpectedTimeLabel.text = "O 시간"
+        
+        
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 7)
+        return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 6)
     }
 }

@@ -15,7 +15,7 @@ public class HomeViewController: UIViewController {
         return (view as! HomeView)
     }
     
-    // MARK - View Lifecycle
+    // MARK: - View Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
         

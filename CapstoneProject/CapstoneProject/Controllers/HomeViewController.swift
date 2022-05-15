@@ -35,12 +35,12 @@ public class HomeViewController: UIViewController {
         // TO-DO
         // Task detailView 만들기
         let action = UIAction { _ in
-            guard let newTaskViewController = self.storyboard?.instantiateViewController(withIdentifier: "newTaskViewController") as? NewTaskViewController else { return }
+            guard let addTaskViewController = self.storyboard?.instantiateViewController(withIdentifier: "addTaskViewController") as? AddTaskViewController else { return }
             // 화면 전환 애니메이션 설정
-            newTaskViewController.modalTransitionStyle = .coverVertical
+            addTaskViewController.modalTransitionStyle = .coverVertical
             // 전환된 화면이 보여지는 방법 설정 (fullScreen)
-            newTaskViewController.modalPresentationStyle = .fullScreen
-            self.present(newTaskViewController, animated: true, completion: nil)
+            addTaskViewController.modalPresentationStyle = .fullScreen
+            self.present(addTaskViewController, animated: true, completion: nil)
         }
         // 커스텀 이미지 적용 후 pointSize 수정
         let image = UIImage(systemName: "plus.circle.fill")

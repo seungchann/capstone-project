@@ -141,11 +141,11 @@
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="109.29535232383809"/>
         </scene>
-        <!--New Task View Controller-->
+        <!--Add Task View Controller-->
         <scene sceneID="GZr-n4-THi">
             <objects>
-                <viewController storyboardIdentifier="newTaskViewController" id="vgy-iB-yV7" customClass="NewTaskViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KpC-tU-Iz1" customClass="NewTaskView" customModule="CapstoneProject" customModuleProvider="target">
+                <viewController storyboardIdentifier="addTaskViewController" id="vgy-iB-yV7" customClass="AddTaskViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KpC-tU-Iz1" customClass="AddTaskView" customModule="CapstoneProject" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -304,9 +304,9 @@
                             <constraint firstItem="rz5-I6-te4" firstAttribute="trailing" secondItem="bqn-VN-Tor" secondAttribute="trailing" id="xb8-Ot-ECC"/>
                         </constraints>
                         <connections>
-                            <outlet property="addTaskButton" destination="Dae-6q-WZV" id="SCL-ka-RQN"/>
-                            <outlet property="backButton" destination="dg3-sz-GwB" id="NU8-eV-tPZ"/>
-                            <outlet property="taskNameTextField" destination="YTZ-Cj-OlK" id="fYO-sd-kfd"/>
+                            <outlet property="addTaskButton" destination="Dae-6q-WZV" id="7hP-dX-OID"/>
+                            <outlet property="backButton" destination="dg3-sz-GwB" id="7d8-gt-sPq"/>
+                            <outlet property="taskNameTextField" destination="YTZ-Cj-OlK" id="5Tw-W2-1hz"/>
                         </connections>
                     </view>
                 </viewController>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgy-iB-yV7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -141,11 +141,11 @@
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="109.29535232383809"/>
         </scene>
-        <!--Task Detail View Controller-->
+        <!--New Task View Controller-->
         <scene sceneID="GZr-n4-THi">
             <objects>
-                <viewController id="vgy-iB-yV7" customClass="TaskDetailViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KpC-tU-Iz1" customClass="TaskDetailView" customModule="CapstoneProject" customModuleProvider="target">
+                <viewController storyboardIdentifier="newTaskViewController" id="vgy-iB-yV7" customClass="NewTaskViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KpC-tU-Iz1" customClass="NewTaskView" customModule="CapstoneProject" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -304,9 +304,9 @@
                             <constraint firstItem="rz5-I6-te4" firstAttribute="trailing" secondItem="bqn-VN-Tor" secondAttribute="trailing" id="xb8-Ot-ECC"/>
                         </constraints>
                         <connections>
-                            <outlet property="addTaskButton" destination="Dae-6q-WZV" id="uXw-ue-SFb"/>
-                            <outlet property="backButton" destination="dg3-sz-GwB" id="0wc-SD-iU2"/>
-                            <outlet property="taskNameTextField" destination="YTZ-Cj-OlK" id="ab0-2r-sty"/>
+                            <outlet property="addTaskButton" destination="Dae-6q-WZV" id="SCL-ka-RQN"/>
+                            <outlet property="backButton" destination="dg3-sz-GwB" id="NU8-eV-tPZ"/>
+                            <outlet property="taskNameTextField" destination="YTZ-Cj-OlK" id="fYO-sd-kfd"/>
                         </connections>
                     </view>
                 </viewController>

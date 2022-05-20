@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeChildViewController.swift
 //  CapstoneProject
 //
 //  Created by 김승찬 on 2022/05/08.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class HomeViewController: UIViewController {
+public class HomeChildViewController: UIViewController {
     
     // MARK: - Instance Properties
     public var homeView: HomeView! {
@@ -57,7 +57,7 @@ public class HomeViewController: UIViewController {
 // cell 당 마진, 크기 조절
 // cell 터치 시에 효과 구현
 // cell 드래그 앤 드롭 구현
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeChildViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10

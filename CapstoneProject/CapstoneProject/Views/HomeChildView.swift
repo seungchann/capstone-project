@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class HomeView: UIView {
+public class HomeChildView: UIView {
     @IBOutlet public var tomorrowTextLabel: UILabel!
     @IBOutlet public var remainingTimeLabel: UILabel!
     @IBOutlet public var remainingTextLabel: UILabel!

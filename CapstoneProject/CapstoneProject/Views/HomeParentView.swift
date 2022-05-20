@@ -9,5 +9,6 @@ import UIKit
 
 public class HomeParentView: UIView {
     @IBOutlet var remainingDayLabel: UILabel!
+    @IBOutlet var remainingTotalExpectedHourLabel: UILabel!
     @IBOutlet var addTaskButton: UIButton!
 }

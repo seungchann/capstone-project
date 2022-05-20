@@ -8,7 +8,7 @@
 import UIKit
 import XLPagerTabStrip
 
-public class HomeParentViewController: ButtonBarPagerTabStripViewController {
+public class HomeParentViewController: BarPagerTabStripViewController {
     
     // MARK: - Properties
     public var homeParentView: HomeParentView! {
@@ -20,10 +20,13 @@ public class HomeParentViewController: ButtonBarPagerTabStripViewController {
                                         "3일 뒤까지",
                                         "일주일 뒤까지"]
     
+    let remainingExpectedTimeLabels: [String] = ["3시간",
+                                                 "5시간",
+                                                 "7시간"]
+    
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
-        self.settings.style.buttonBarItemLeftRightMargin = (self.view.frame.width / 2)
-        self.settings.style.buttonBarItemsShouldFillAvailableWidth = false
+        self.settings.style.selectedBarBackgroundColor = UIColor.black
         super.viewDidLoad()
         setupAddTaskButton()
         
@@ -62,6 +65,7 @@ public class HomeParentViewController: ButtonBarPagerTabStripViewController {
         super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
         if progressPercentage == 1, toIndex >= 0 && toIndex < remainingDayLabels.count {
             self.homeParentView.remainingDayLabel.text = self.remainingDayLabels[toIndex]
+            self.homeParentView.remainingTotalExpectedHourLabel.text = self.remainingExpectedTimeLabels[toIndex]
         }
     }
 }

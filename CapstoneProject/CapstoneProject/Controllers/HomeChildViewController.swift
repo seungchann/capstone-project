@@ -11,7 +11,7 @@ import XLPagerTabStrip
 public class HomeChildViewController: UIViewController {
     
     // MARK: - Instance Properties
-    public var homeView: HomeChildView! {
+    public var homeChildView: HomeChildView! {
         guard isViewLoaded else { return nil }
         return (view as! HomeChildView)
     }
@@ -20,15 +20,15 @@ public class HomeChildViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        homeView.taskCollectionView.delegate = self
-        homeView.taskCollectionView.dataSource = self
+        homeChildView.taskCollectionView.delegate = self
+        homeChildView.taskCollectionView.dataSource = self
         
         setupRemainingLabels()
     }
     
     private func setupRemainingLabels() {
         let remainingTime: Int = 10
-        homeView.remainingTimeLabel.text = "\(remainingTime) 시간치"
+        homeChildView.remainingTimeLabel.text = "\(remainingTime) 시간치"
     }
     
 }

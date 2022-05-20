@@ -11,10 +11,15 @@ import XLPagerTabStrip
 public class HomeParentViewController: ButtonBarPagerTabStripViewController {
     
     // MARK: - Properties
-    @IBOutlet var addTaskButton: UIButton!
+    public var homeParentView: HomeParentView! {
+        guard isViewLoaded else { return nil }
+        return (view as! HomeParentView)
+    }
     
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
+        self.settings.style.buttonBarItemLeftRightMargin = (self.view.frame.width / 2 - 50)
+        self.settings.style.buttonBarItemsShouldFillAvailableWidth = false
         super.viewDidLoad()
         setupAddTaskButton()
     }
@@ -41,9 +46,9 @@ public class HomeParentViewController: ButtonBarPagerTabStripViewController {
         let image = UIImage(systemName: "plus.circle.fill")
         let pointSize: CGFloat = 40
         
-        self.addTaskButton.setTitle("", for: .normal)
-        self.addTaskButton.addAction(action, for: .touchUpInside)
-        self.addTaskButton.setImage(image, for: .normal)
-        self.addTaskButton.setPreferredSymbolConfiguration(.init(pointSize: pointSize, weight: .regular), forImageIn: .normal)
+        homeParentView.addTaskButton.setTitle("", for: .normal)
+        homeParentView.addTaskButton.addAction(action, for: .touchUpInside)
+        homeParentView.addTaskButton.setImage(image, for: .normal)
+        homeParentView.addTaskButton.setPreferredSymbolConfiguration(.init(pointSize: pointSize, weight: .regular), forImageIn: .normal)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6401C0BF28376E55000358D1 /* HomeParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6401C0BE28376E55000358D1 /* HomeParentView.swift */; };
 		641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641F2B30282E21860007C401 /* HomeTaskCell.swift */; };
 		643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643478D4283167EE0038A932 /* HomeParentViewController.swift */; };
 		644D9BFA282544E9000C80BB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D9BF9282544E9000C80BB /* Task.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		4046C9957ABB88F6D8DFA5BD /* Pods_CapstoneProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F516136939B358E0E5823F /* Pods-CapstoneProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProject.release.xcconfig"; path = "Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject.release.xcconfig"; sourceTree = "<group>"; };
+		6401C0BE28376E55000358D1 /* HomeParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParentView.swift; sourceTree = "<group>"; };
 		641F2B30282E21860007C401 /* HomeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTaskCell.swift; sourceTree = "<group>"; };
 		643478D4283167EE0038A932 /* HomeParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParentViewController.swift; sourceTree = "<group>"; };
 		644D9BF9282544E9000C80BB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				64639E6E282539AF008311D4 /* Main.storyboard */,
 				64639E73282539B3008311D4 /* LaunchScreen.storyboard */,
+				6401C0BE28376E55000358D1 /* HomeParentView.swift */,
 				645949E42827EDCF00D23DA9 /* HomeChildView.swift */,
 				641F2B30282E21860007C401 /* HomeTaskCell.swift */,
 				64BDC6102830ED0C004E00D3 /* AddTaskView.swift */,
@@ -266,6 +269,7 @@
 				641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */,
 				643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */,
 				64BDC6112830ED0C004E00D3 /* AddTaskView.swift in Sources */,
+				6401C0BF28376E55000358D1 /* HomeParentView.swift in Sources */,
 				645949E52827EDCF00D23DA9 /* HomeChildView.swift in Sources */,
 				64639E69282539AF008311D4 /* AppDelegate.swift in Sources */,
 				645949E32827EA5E00D23DA9 /* HomeChildViewController.swift in Sources */,

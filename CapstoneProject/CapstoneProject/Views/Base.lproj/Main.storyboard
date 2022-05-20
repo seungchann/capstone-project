@@ -47,11 +47,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-yI-ELp">
-                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="v5d-0n-Gn0"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="v5f-K1-ftC"/>
-                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzP-Wy-2Cc">
                                 <rect key="frame" x="245" y="537" width="100" height="100"/>
                                 <constraints>
@@ -61,21 +56,36 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpQ-xy-9dg">
+                                <rect key="frame" x="0.0" y="192" width="375" height="475"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-yI-ELp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="475"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fCi-yI-ELp" firstAttribute="top" secondItem="gpQ-xy-9dg" secondAttribute="top" id="Eb4-gl-uGC"/>
+                                    <constraint firstItem="fCi-yI-ELp" firstAttribute="leading" secondItem="gpQ-xy-9dg" secondAttribute="leading" id="hLZ-Ad-tH5"/>
+                                    <constraint firstAttribute="trailing" secondItem="fCi-yI-ELp" secondAttribute="trailing" id="yIs-4n-Opy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qdD-oX-Emq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fCi-yI-ELp" firstAttribute="leading" secondItem="qdD-oX-Emq" secondAttribute="leading" id="06G-lt-eP4"/>
                             <constraint firstItem="95U-3m-zpm" firstAttribute="leading" secondItem="qdD-oX-Emq" secondAttribute="leading" constant="30" id="1xf-ej-pIq"/>
-                            <constraint firstItem="qdD-oX-Emq" firstAttribute="trailing" secondItem="fCi-yI-ELp" secondAttribute="trailing" id="6cW-21-3pU"/>
                             <constraint firstItem="95U-3m-zpm" firstAttribute="top" secondItem="qdD-oX-Emq" secondAttribute="top" constant="40" id="7sZ-K9-9Sg"/>
-                            <constraint firstItem="fCi-yI-ELp" firstAttribute="top" secondItem="2p8-9T-bOw" secondAttribute="bottom" id="GFv-Vd-Kye"/>
+                            <constraint firstItem="qdD-oX-Emq" firstAttribute="bottom" secondItem="fCi-yI-ELp" secondAttribute="bottom" id="AUI-34-A8q"/>
                             <constraint firstItem="2p8-9T-bOw" firstAttribute="leading" secondItem="qdD-oX-Emq" secondAttribute="leading" id="Iht-6g-6gs"/>
-                            <constraint firstItem="qdD-oX-Emq" firstAttribute="bottom" secondItem="fCi-yI-ELp" secondAttribute="bottom" id="MzC-4b-7w5"/>
                             <constraint firstItem="qdD-oX-Emq" firstAttribute="trailing" secondItem="nzP-Wy-2Cc" secondAttribute="trailing" constant="30" id="PPZ-N3-JLq"/>
+                            <constraint firstItem="qdD-oX-Emq" firstAttribute="trailing" secondItem="gpQ-xy-9dg" secondAttribute="trailing" id="Rrq-f8-qbx"/>
+                            <constraint firstItem="qdD-oX-Emq" firstAttribute="bottom" secondItem="gpQ-xy-9dg" secondAttribute="bottom" id="YMc-6A-uHS"/>
                             <constraint firstItem="qdD-oX-Emq" firstAttribute="trailing" secondItem="2p8-9T-bOw" secondAttribute="trailing" id="bdD-xc-wxx"/>
+                            <constraint firstItem="gpQ-xy-9dg" firstAttribute="top" secondItem="2p8-9T-bOw" secondAttribute="bottom" id="kGH-NN-1Vg"/>
                             <constraint firstItem="qdD-oX-Emq" firstAttribute="bottom" secondItem="nzP-Wy-2Cc" secondAttribute="bottom" constant="30" id="toy-ia-aog"/>
                             <constraint firstItem="2p8-9T-bOw" firstAttribute="top" secondItem="95U-3m-zpm" secondAttribute="bottom" constant="10" id="uoP-Ud-IQK"/>
+                            <constraint firstItem="gpQ-xy-9dg" firstAttribute="leading" secondItem="qdD-oX-Emq" secondAttribute="leading" id="xfz-X3-xjv"/>
                         </constraints>
                         <connections>
                             <outlet property="addTaskButton" destination="nzP-Wy-2Cc" id="jk8-KU-zYr"/>

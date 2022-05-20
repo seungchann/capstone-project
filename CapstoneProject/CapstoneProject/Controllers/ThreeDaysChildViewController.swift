@@ -54,7 +54,7 @@ extension ThreeDaysChildViewController: UICollectionViewDelegate, UICollectionVi
 
 extension ThreeDaysChildViewController: IndicatorInfoProvider {
     public func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "10시간치 남았다."
+        return "20시간치 남았다."
     }
 }
 

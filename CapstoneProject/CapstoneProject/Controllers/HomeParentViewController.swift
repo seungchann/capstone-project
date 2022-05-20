@@ -22,7 +22,7 @@ public class HomeParentViewController: ButtonBarPagerTabStripViewController {
     
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
-        self.settings.style.buttonBarItemLeftRightMargin = (self.view.frame.width / 2 - 100)
+        self.settings.style.buttonBarItemLeftRightMargin = (self.view.frame.width / 2)
         self.settings.style.buttonBarItemsShouldFillAvailableWidth = false
         super.viewDidLoad()
         setupAddTaskButton()
@@ -60,6 +60,8 @@ public class HomeParentViewController: ButtonBarPagerTabStripViewController {
     
     override public func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
-        self.homeParentView.remainingDayLabel.text = self.remainingDayLabels[toIndex]
+        if progressPercentage == 1, toIndex >= 0 && toIndex < remainingDayLabels.count {
+            self.homeParentView.remainingDayLabel.text = self.remainingDayLabels[toIndex]
+        }
     }
 }

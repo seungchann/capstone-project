@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xK7-dH-N53">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,11 +9,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home Parent View Controller-->
+        <scene sceneID="SnM-kb-foF">
+            <objects>
+                <viewController id="xK7-dH-N53" customClass="HomeParentViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YnQ-HN-2gj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2p8-9T-bOw" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DyU-6k-Y7a"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lGp-QF-87u">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6Of-Hq-pbt">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nh2-Am-chs">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-yI-ELp">
+                                <rect key="frame" x="0.0" y="208" width="375" height="459"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="v5d-0n-Gn0"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="v5f-K1-ftC"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qdD-oX-Emq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fCi-yI-ELp" firstAttribute="leading" secondItem="qdD-oX-Emq" secondAttribute="leading" id="06G-lt-eP4"/>
+                            <constraint firstItem="2p8-9T-bOw" firstAttribute="top" secondItem="qdD-oX-Emq" secondAttribute="top" id="4R5-dM-94q"/>
+                            <constraint firstItem="qdD-oX-Emq" firstAttribute="trailing" secondItem="fCi-yI-ELp" secondAttribute="trailing" id="6cW-21-3pU"/>
+                            <constraint firstItem="fCi-yI-ELp" firstAttribute="top" secondItem="2p8-9T-bOw" secondAttribute="bottom" id="GFv-Vd-Kye"/>
+                            <constraint firstItem="2p8-9T-bOw" firstAttribute="leading" secondItem="qdD-oX-Emq" secondAttribute="leading" id="Iht-6g-6gs"/>
+                            <constraint firstItem="qdD-oX-Emq" firstAttribute="bottom" secondItem="fCi-yI-ELp" secondAttribute="bottom" id="MzC-4b-7w5"/>
+                            <constraint firstItem="qdD-oX-Emq" firstAttribute="trailing" secondItem="2p8-9T-bOw" secondAttribute="trailing" id="bdD-xc-wxx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="2p8-9T-bOw" id="Zuq-bS-Rss"/>
+                        <outlet property="containerView" destination="fCi-yI-ELp" id="hpE-6M-raG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qph-SB-rtd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="108.39580209895054"/>
+        </scene>
+        <!--Home Child View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeView" customModule="CapstoneProject" customModuleProvider="target">
+                <viewController storyboardIdentifier="homeChildViewController" id="BYZ-38-t0r" customClass="HomeChildViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeChildView" customModule="CapstoneProject" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -129,11 +187,11 @@
                             <constraint firstItem="JmG-xk-gPy" firstAttribute="leading" secondItem="aEW-xn-pU5" secondAttribute="trailing" constant="20" id="yie-6b-rjU"/>
                         </constraints>
                         <connections>
-                            <outlet property="addTaskButton" destination="ejJ-c7-Zgb" id="Q3Y-eB-qs6"/>
-                            <outlet property="remainingTextLabel" destination="JmG-xk-gPy" id="kr8-4C-LoW"/>
-                            <outlet property="remainingTimeLabel" destination="aEW-xn-pU5" id="jUc-TX-j6N"/>
-                            <outlet property="taskCollectionView" destination="RPT-NP-yvq" id="G2e-28-tAh"/>
-                            <outlet property="tomorrowTextLabel" destination="lEE-MY-vKC" id="WYL-Nf-eiW"/>
+                            <outlet property="addTaskButton" destination="ejJ-c7-Zgb" id="a4V-4j-uTC"/>
+                            <outlet property="remainingTextLabel" destination="JmG-xk-gPy" id="8gw-aZ-f8H"/>
+                            <outlet property="remainingTimeLabel" destination="aEW-xn-pU5" id="PLj-DD-rjQ"/>
+                            <outlet property="taskCollectionView" destination="RPT-NP-yvq" id="QeD-Ol-U9i"/>
+                            <outlet property="tomorrowTextLabel" destination="lEE-MY-vKC" id="2cb-Kw-hwg"/>
                         </connections>
                     </view>
                 </viewController>

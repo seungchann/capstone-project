@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 public class HomeChildViewController: UIViewController {
     
     // MARK: - Instance Properties
-    public var homeView: HomeView! {
+    public var homeView: HomeChildView! {
         guard isViewLoaded else { return nil }
-        return (view as! HomeView)
+        return (view as! HomeChildView)
     }
     
     // MARK: - View Lifecycle
@@ -75,5 +76,11 @@ extension HomeChildViewController: UICollectionViewDelegate, UICollectionViewDat
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 6)
+    }
+}
+
+extension HomeChildViewController: IndicatorInfoProvider {
+    public func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return "TEST"
     }
 }

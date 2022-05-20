@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641F2B30282E21860007C401 /* HomeTaskCell.swift */; };
+		643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643478D4283167EE0038A932 /* HomeParentViewController.swift */; };
 		644D9BFA282544E9000C80BB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D9BF9282544E9000C80BB /* Task.swift */; };
-		645949E32827EA5E00D23DA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E22827EA5E00D23DA9 /* HomeViewController.swift */; };
-		645949E52827EDCF00D23DA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E42827EDCF00D23DA9 /* HomeView.swift */; };
+		645949E32827EA5E00D23DA9 /* HomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E22827EA5E00D23DA9 /* HomeChildViewController.swift */; };
+		645949E52827EDCF00D23DA9 /* HomeChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E42827EDCF00D23DA9 /* HomeChildView.swift */; };
 		64639E69282539AF008311D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64639E68282539AF008311D4 /* AppDelegate.swift */; };
 		64639E70282539AF008311D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64639E6E282539AF008311D4 /* Main.storyboard */; };
 		64639E72282539B3008311D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64639E71282539B3008311D4 /* Assets.xcassets */; };
@@ -24,9 +25,10 @@
 		4046C9957ABB88F6D8DFA5BD /* Pods_CapstoneProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F516136939B358E0E5823F /* Pods-CapstoneProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProject.release.xcconfig"; path = "Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject.release.xcconfig"; sourceTree = "<group>"; };
 		641F2B30282E21860007C401 /* HomeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTaskCell.swift; sourceTree = "<group>"; };
+		643478D4283167EE0038A932 /* HomeParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParentViewController.swift; sourceTree = "<group>"; };
 		644D9BF9282544E9000C80BB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		645949E22827EA5E00D23DA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		645949E42827EDCF00D23DA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		645949E22827EA5E00D23DA9 /* HomeChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildViewController.swift; sourceTree = "<group>"; };
+		645949E42827EDCF00D23DA9 /* HomeChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildView.swift; sourceTree = "<group>"; };
 		64639E65282539AF008311D4 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64639E68282539AF008311D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64639E6F282539AF008311D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +58,6 @@
 				752E95D24C7D97C4A931C0C1 /* Pods-CapstoneProject.debug.xcconfig */,
 				41F516136939B358E0E5823F /* Pods-CapstoneProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,7 +83,7 @@
 			children = (
 				64639E6E282539AF008311D4 /* Main.storyboard */,
 				64639E73282539B3008311D4 /* LaunchScreen.storyboard */,
-				645949E42827EDCF00D23DA9 /* HomeView.swift */,
+				645949E42827EDCF00D23DA9 /* HomeChildView.swift */,
 				641F2B30282E21860007C401 /* HomeTaskCell.swift */,
 				64BDC6102830ED0C004E00D3 /* AddTaskView.swift */,
 			);
@@ -100,7 +101,8 @@
 		644D9BF828254089000C80BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				645949E22827EA5E00D23DA9 /* HomeViewController.swift */,
+				643478D4283167EE0038A932 /* HomeParentViewController.swift */,
+				645949E22827EA5E00D23DA9 /* HomeChildViewController.swift */,
 				64BDC6122830EDA9004E00D3 /* AddTaskViewController.swift */,
 			);
 			path = Controllers;
@@ -262,10 +264,11 @@
 				64BDC6132830EDA9004E00D3 /* AddTaskViewController.swift in Sources */,
 				644D9BFA282544E9000C80BB /* Task.swift in Sources */,
 				641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */,
+				643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */,
 				64BDC6112830ED0C004E00D3 /* AddTaskView.swift in Sources */,
-				645949E52827EDCF00D23DA9 /* HomeView.swift in Sources */,
+				645949E52827EDCF00D23DA9 /* HomeChildView.swift in Sources */,
 				64639E69282539AF008311D4 /* AppDelegate.swift in Sources */,
-				645949E32827EA5E00D23DA9 /* HomeViewController.swift in Sources */,
+				645949E32827EA5E00D23DA9 /* HomeChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

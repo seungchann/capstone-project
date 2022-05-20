@@ -1,14 +1,16 @@
 //
-//  HomeChildViewController.swift
+//  ThreeDaysViewController.swift
 //  CapstoneProject
 //
-//  Created by 김승찬 on 2022/05/08.
+//  Created by 김승찬 on 2022/05/20.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-public class HomeChildViewController: UIViewController {
+public class ThreeDaysChildViewController: UIViewController {
+    
+    static let identifier: String = "threeDaysChildViewController"
     
     // MARK: - Instance Properties
     public var homeChildView: HomeChildView! {
@@ -22,22 +24,14 @@ public class HomeChildViewController: UIViewController {
         
         homeChildView.taskCollectionView.delegate = self
         homeChildView.taskCollectionView.dataSource = self
-        
-        setupRemainingLabels()
     }
-    
-    private func setupRemainingLabels() {
-        let remainingTime: Int = 10
-        homeChildView.remainingTimeLabel.text = "\(remainingTime) 시간치"
-    }
-    
 }
 
 // TO-DO
 // cell 당 마진, 크기 조절
 // cell 터치 시에 효과 구현
 // cell 드래그 앤 드롭 구현
-extension HomeChildViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ThreeDaysChildViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -47,7 +41,7 @@ extension HomeChildViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeTaskCell.identifier, for: indexPath) as! HomeTaskCell
        
         cell.taskNameLabel.text = "Example Task"
-        cell.taskExpectedTimeLabel.text = "O 시간"
+        cell.taskExpectedTimeLabel.text = "1O 시간"
         
         
         return cell
@@ -58,8 +52,9 @@ extension HomeChildViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 }
 
-extension HomeChildViewController: IndicatorInfoProvider {
+extension ThreeDaysChildViewController: IndicatorInfoProvider {
     public func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "TEST"
+        return "10시간치 남았다."
     }
 }
+

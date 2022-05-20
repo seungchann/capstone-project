@@ -16,19 +16,25 @@ public class HomeParentViewController: ButtonBarPagerTabStripViewController {
         return (view as! HomeParentView)
     }
     
+    let remainingDayLabels: [String] = ["내일까지",
+                                        "3일 뒤까지",
+                                        "일주일 뒤까지"]
+    
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
-        self.settings.style.buttonBarItemLeftRightMargin = (self.view.frame.width / 2 - 50)
+        self.settings.style.buttonBarItemLeftRightMargin = (self.view.frame.width / 2 - 100)
         self.settings.style.buttonBarItemsShouldFillAvailableWidth = false
         super.viewDidLoad()
         setupAddTaskButton()
+        
     }
     
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeChildViewController")
-        let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeChildViewController")
+        let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: TomorrowChildViewController.identifier)
+        let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ThreeDaysChildViewController.identifier)
+        let child3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ThreeDaysChildViewController.identifier)
         
-        return [child1, child2]
+        return [child1, child2, child3]
     }
     
     private func setupAddTaskButton() {
@@ -50,5 +56,10 @@ public class HomeParentViewController: ButtonBarPagerTabStripViewController {
         homeParentView.addTaskButton.addAction(action, for: .touchUpInside)
         homeParentView.addTaskButton.setImage(image, for: .normal)
         homeParentView.addTaskButton.setPreferredSymbolConfiguration(.init(pointSize: pointSize, weight: .regular), forImageIn: .normal)
+    }
+    
+    override public func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+        super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
+        self.homeParentView.remainingDayLabel.text = self.remainingDayLabels[toIndex]
     }
 }

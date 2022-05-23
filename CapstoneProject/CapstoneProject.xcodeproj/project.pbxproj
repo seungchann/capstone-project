@@ -7,31 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6401C0BF28376E55000358D1 /* HomeParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6401C0BE28376E55000358D1 /* HomeParentView.swift */; };
 		641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641F2B30282E21860007C401 /* HomeTaskCell.swift */; };
+		643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643478D4283167EE0038A932 /* HomeParentViewController.swift */; };
 		644D9BFA282544E9000C80BB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D9BF9282544E9000C80BB /* Task.swift */; };
-		645949E32827EA5E00D23DA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E22827EA5E00D23DA9 /* HomeViewController.swift */; };
-		645949E52827EDCF00D23DA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E42827EDCF00D23DA9 /* HomeView.swift */; };
+		645949E32827EA5E00D23DA9 /* TomorrowChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E22827EA5E00D23DA9 /* TomorrowChildViewController.swift */; };
+		645949E52827EDCF00D23DA9 /* HomeChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645949E42827EDCF00D23DA9 /* HomeChildView.swift */; };
 		64639E69282539AF008311D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64639E68282539AF008311D4 /* AppDelegate.swift */; };
 		64639E70282539AF008311D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64639E6E282539AF008311D4 /* Main.storyboard */; };
 		64639E72282539B3008311D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64639E71282539B3008311D4 /* Assets.xcassets */; };
 		64639E75282539B3008311D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64639E73282539B3008311D4 /* LaunchScreen.storyboard */; };
+		6475840C2837870B00F7E1DD /* ThreeDaysChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475840B2837870B00F7E1DD /* ThreeDaysChildViewController.swift */; };
 		64BDC6112830ED0C004E00D3 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDC6102830ED0C004E00D3 /* AddTaskView.swift */; };
 		64BDC6132830EDA9004E00D3 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDC6122830EDA9004E00D3 /* AddTaskViewController.swift */; };
+		FBD9636A459A2A63117F3817 /* Pods_CapstoneProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4046C9957ABB88F6D8DFA5BD /* Pods_CapstoneProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4046C9957ABB88F6D8DFA5BD /* Pods_CapstoneProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F516136939B358E0E5823F /* Pods-CapstoneProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProject.release.xcconfig"; path = "Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject.release.xcconfig"; sourceTree = "<group>"; };
+		6401C0BE28376E55000358D1 /* HomeParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParentView.swift; sourceTree = "<group>"; };
 		641F2B30282E21860007C401 /* HomeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTaskCell.swift; sourceTree = "<group>"; };
+		643478D4283167EE0038A932 /* HomeParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParentViewController.swift; sourceTree = "<group>"; };
 		644D9BF9282544E9000C80BB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		645949E22827EA5E00D23DA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		645949E42827EDCF00D23DA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		645949E22827EA5E00D23DA9 /* TomorrowChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowChildViewController.swift; sourceTree = "<group>"; };
+		645949E42827EDCF00D23DA9 /* HomeChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildView.swift; sourceTree = "<group>"; };
 		64639E65282539AF008311D4 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64639E68282539AF008311D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64639E6F282539AF008311D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64639E71282539B3008311D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64639E74282539B3008311D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64639E76282539B3008311D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6475840B2837870B00F7E1DD /* ThreeDaysChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysChildViewController.swift; sourceTree = "<group>"; };
 		64BDC6102830ED0C004E00D3 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		64BDC6122830EDA9004E00D3 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		752E95D24C7D97C4A931C0C1 /* Pods-CapstoneProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProject.debug.xcconfig"; path = "Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +49,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD9636A459A2A63117F3817 /* Pods_CapstoneProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3520DF10B027D0E9A5E30E29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				752E95D24C7D97C4A931C0C1 /* Pods-CapstoneProject.debug.xcconfig */,
+				41F516136939B358E0E5823F /* Pods-CapstoneProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		644D9BF42825403A000C80BB /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +87,8 @@
 			children = (
 				64639E6E282539AF008311D4 /* Main.storyboard */,
 				64639E73282539B3008311D4 /* LaunchScreen.storyboard */,
-				645949E42827EDCF00D23DA9 /* HomeView.swift */,
+				6401C0BE28376E55000358D1 /* HomeParentView.swift */,
+				645949E42827EDCF00D23DA9 /* HomeChildView.swift */,
 				641F2B30282E21860007C401 /* HomeTaskCell.swift */,
 				64BDC6102830ED0C004E00D3 /* AddTaskView.swift */,
 			);
@@ -85,7 +106,9 @@
 		644D9BF828254089000C80BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				645949E22827EA5E00D23DA9 /* HomeViewController.swift */,
+				643478D4283167EE0038A932 /* HomeParentViewController.swift */,
+				645949E22827EA5E00D23DA9 /* TomorrowChildViewController.swift */,
+				6475840B2837870B00F7E1DD /* ThreeDaysChildViewController.swift */,
 				64BDC6122830EDA9004E00D3 /* AddTaskViewController.swift */,
 			);
 			path = Controllers;
@@ -96,6 +119,8 @@
 			children = (
 				64639E67282539AF008311D4 /* CapstoneProject */,
 				64639E66282539AF008311D4 /* Products */,
+				3520DF10B027D0E9A5E30E29 /* Pods */,
+				9C278B76B0FFFA7DE5F684C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +144,14 @@
 			path = CapstoneProject;
 			sourceTree = "<group>";
 		};
+		9C278B76B0FFFA7DE5F684C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4046C9957ABB88F6D8DFA5BD /* Pods_CapstoneProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64639E79282539B3008311D4 /* Build configuration list for PBXNativeTarget "CapstoneProject" */;
 			buildPhases = (
+				2215CEDD2C3B22F587C248A6 /* [CP] Check Pods Manifest.lock */,
 				64639E61282539AF008311D4 /* Sources */,
 				64639E62282539AF008311D4 /* Frameworks */,
 				64639E63282539AF008311D4 /* Resources */,
+				DFD716844E50A8BE1AC7B4FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +220,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2215CEDD2C3B22F587C248A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CapstoneProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFD716844E50A8BE1AC7B4FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64639E61282539AF008311D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,11 +269,14 @@
 			files = (
 				64BDC6132830EDA9004E00D3 /* AddTaskViewController.swift in Sources */,
 				644D9BFA282544E9000C80BB /* Task.swift in Sources */,
+				6475840C2837870B00F7E1DD /* ThreeDaysChildViewController.swift in Sources */,
 				641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */,
+				643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */,
 				64BDC6112830ED0C004E00D3 /* AddTaskView.swift in Sources */,
-				645949E52827EDCF00D23DA9 /* HomeView.swift in Sources */,
+				6401C0BF28376E55000358D1 /* HomeParentView.swift in Sources */,
+				645949E52827EDCF00D23DA9 /* HomeChildView.swift in Sources */,
 				64639E69282539AF008311D4 /* AppDelegate.swift in Sources */,
-				645949E32827EA5E00D23DA9 /* HomeViewController.swift in Sources */,
+				645949E32827EA5E00D23DA9 /* TomorrowChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +418,7 @@
 		};
 		64639E7A282539B3008311D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752E95D24C7D97C4A931C0C1 /* Pods-CapstoneProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +447,7 @@
 		};
 		64639E7B282539B3008311D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41F516136939B358E0E5823F /* Pods-CapstoneProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

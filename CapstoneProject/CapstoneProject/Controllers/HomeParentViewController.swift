@@ -24,6 +24,10 @@ public class HomeParentViewController: BarPagerTabStripViewController {
                                                  "5시간",
                                                  "7시간"]
     
+    let nextTabDayLabels: [String] = ["3일 뒤까지",
+                                      "일주일 뒤까지",
+                                      ""]
+    
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
         self.settings.style.selectedBarBackgroundColor = UIColor.black
@@ -66,6 +70,7 @@ public class HomeParentViewController: BarPagerTabStripViewController {
         if progressPercentage == 1, toIndex >= 0 && toIndex < remainingDayLabels.count {
             self.homeParentView.remainingDayLabel.text = self.remainingDayLabels[toIndex]
             self.homeParentView.remainingTotalExpectedHourLabel.text = self.remainingExpectedTimeLabels[toIndex]
+            self.homeParentView.nextTabDayLabel.text = self.nextTabDayLabels[toIndex]
         }
     }
 }

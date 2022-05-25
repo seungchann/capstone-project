@@ -15,7 +15,9 @@ public class AddTaskViewController: UIViewController {
         return (view as! AddTaskView)
     }
     
-    let datePicker: UIDatePicker = UIDatePicker()
+    let calendarDatePicker: UIDatePicker = UIDatePicker()
+    let timeDatePicker: UIDatePicker = UIDatePicker()
+    let expectedTimeDatePicker: UIDatePicker = UIDatePicker()
     let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
     
     // MARK: - View Lifecycle
@@ -23,13 +25,14 @@ public class AddTaskViewController: UIViewController {
         super.viewDidLoad()
         self.addTaskView.taskNameTextField.delegate = self
         self.addTaskView.dateTextField.delegate = self
+        self.addTaskView.timeTextField.delegate = self
         self.tapGesture.delegate = self
         
         setupBackButton()
         setupAddTaskButton()
         setKeyboardActions()
         setStackViewsCorners()
-        createDataPickerView()
+        setDataPickerView()
     }
     
     private func setupBackButton() {
@@ -98,7 +101,7 @@ extension AddTaskViewController: UITextFieldDelegate, UIGestureRecognizerDelegat
 
 extension AddTaskViewController {
     
-    private func createDataPickerView() {
+    private func setDataPickerView() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 45))
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
@@ -106,19 +109,61 @@ extension AddTaskViewController {
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
         toolbar.setItems([cancelButton, flexibleSpace, doneButton], animated: true)
+        
+        var components = DateComponents()
+        components.day = 0
+        let minDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
+
         self.addTaskView.dateTextField.inputAccessoryView = toolbar
-        self.addTaskView.dateTextField.inputView = datePicker
-        self.datePicker.datePickerMode = .date
-        self.datePicker.preferredDatePickerStyle = .inline
+        self.addTaskView.dateTextField.inputView = calendarDatePicker
+        self.addTaskView.dateTextField.tintColor = .clear
+        
+        self.addTaskView.timeTextField.inputAccessoryView = toolbar
+        self.addTaskView.timeTextField.inputView = timeDatePicker
+        self.addTaskView.timeTextField.tintColor = .clear
+        
+        self.addTaskView.expectedTimeTextField.inputAccessoryView = toolbar
+        self.addTaskView.expectedTimeTextField.inputView = expectedTimeDatePicker
+        self.addTaskView.expectedTimeTextField.tintColor = .clear
+        
+        self.calendarDatePicker.locale = Locale(identifier: "ko-KR")
+        self.calendarDatePicker.datePickerMode = .date
+        self.calendarDatePicker.preferredDatePickerStyle = .inline
+        self.calendarDatePicker.minimumDate = minDate
+        
+        self.timeDatePicker.locale = Locale(identifier: "ko-KR")
+        self.timeDatePicker.datePickerMode = .time
+        self.timeDatePicker.preferredDatePickerStyle = .wheels
+        
+        self.expectedTimeDatePicker.locale = Locale(identifier: "ko-KR")
+        self.expectedTimeDatePicker.datePickerMode = .countDownTimer
+        self.expectedTimeDatePicker.preferredDatePickerStyle = .automatic
+        self.expectedTimeDatePicker.minuteInterval = 15
     }
     
     @objc
     func donePressed() {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ko-KR")
         
-        self.addTaskView.dateTextField.text = formatter.string(from: datePicker.date)
+        if self.addTaskView.dateTextField.isEditing {
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            self.addTaskView.dateTextField.text = formatter.string(from: calendarDatePicker.date)
+        }
+        
+        if self.addTaskView.timeTextField.isEditing {
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            self.addTaskView.timeTextField.text = formatter.string(from: timeDatePicker.date)
+        }
+        
+        if self.addTaskView.expectedTimeTextField.isEditing {
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            self.addTaskView.expectedTimeTextField.text = "\(expectedTimeDatePicker.countDownDuration / 60) 분"
+        }
+        
         self.view.endEditing(true)
     }
     

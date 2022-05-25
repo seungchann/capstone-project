@@ -15,4 +15,5 @@ public class AddTaskView: UIView {
     @IBOutlet public var stackSecondView: UIView!
     @IBOutlet public var dateTextField: UITextField!
     @IBOutlet public var timeTextField: UITextField!
+    @IBOutlet public var expectedTimeTextField: UITextField!
 }

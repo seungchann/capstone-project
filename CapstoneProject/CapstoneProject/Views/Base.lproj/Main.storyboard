@@ -153,7 +153,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="여기에 이름을 적어주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YTZ-Cj-OlK">
-                                                        <rect key="frame" x="30" y="61.5" width="185.5" height="35"/>
+                                                        <rect key="frame" x="30" y="61.5" width="265" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="4IP-I2-TnE"/>
                                                         </constraints>
@@ -247,6 +247,7 @@
                                                     <constraint firstItem="Rvs-IB-hfe" firstAttribute="centerY" secondItem="FAp-vT-8Dg" secondAttribute="centerY" id="b1a-8P-Zqh"/>
                                                     <constraint firstItem="OGH-La-UYF" firstAttribute="top" secondItem="LYX-7s-QZm" secondAttribute="bottom" constant="20" id="e1P-wd-o5s"/>
                                                     <constraint firstAttribute="trailing" secondItem="Rvs-IB-hfe" secondAttribute="trailing" constant="30" id="ea9-c3-pbP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YTZ-Cj-OlK" secondAttribute="trailing" constant="30" id="f3S-iM-2FO"/>
                                                     <constraint firstItem="FAp-vT-8Dg" firstAttribute="top" secondItem="fep-fT-o8f" secondAttribute="bottom" constant="15" id="hTr-e0-DbH"/>
                                                     <constraint firstItem="fep-fT-o8f" firstAttribute="leading" secondItem="LYX-7s-QZm" secondAttribute="leading" id="k7R-x7-LW8"/>
                                                     <constraint firstItem="vWc-Dp-Ld6" firstAttribute="top" secondItem="OGH-La-UYF" secondAttribute="bottom" constant="25" id="lV1-oB-BdY"/>
@@ -268,7 +269,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몇 시간이 필요한가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iz-JT-aXL">
-                                                        <rect key="frame" x="30" y="66.5" width="158.5" height="35"/>
+                                                        <rect key="frame" x="30" y="66.5" width="265" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="If8-yQ-9Dr"/>
                                                         </constraints>
@@ -282,6 +283,7 @@
                                                     <constraint firstItem="e5y-Tq-emJ" firstAttribute="leading" secondItem="x0u-Zu-Z2T" secondAttribute="leading" constant="30" id="8mt-t3-lp0"/>
                                                     <constraint firstItem="0iz-JT-aXL" firstAttribute="top" secondItem="e5y-Tq-emJ" secondAttribute="bottom" constant="15" id="EsG-Y4-mYB"/>
                                                     <constraint firstItem="0iz-JT-aXL" firstAttribute="leading" secondItem="e5y-Tq-emJ" secondAttribute="leading" id="Tin-ZS-cn2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0iz-JT-aXL" secondAttribute="trailing" constant="30" id="pYq-mf-AOZ"/>
                                                     <constraint firstAttribute="height" constant="140" id="uvg-AG-Z1e"/>
                                                 </constraints>
                                             </view>
@@ -338,6 +340,7 @@
                             <outlet property="addTaskButton" destination="Dae-6q-WZV" id="7hP-dX-OID"/>
                             <outlet property="backButton" destination="dg3-sz-GwB" id="7d8-gt-sPq"/>
                             <outlet property="dateTextField" destination="FAp-vT-8Dg" id="0pa-nJ-bBF"/>
+                            <outlet property="expectedTimeTextField" destination="0iz-JT-aXL" id="npP-q7-DPg"/>
                             <outlet property="stackFirstView" destination="KBu-NN-IBT" id="qZS-cL-zPu"/>
                             <outlet property="stackSecondView" destination="x0u-Zu-Z2T" id="DKv-8Q-THV"/>
                             <outlet property="taskNameTextField" destination="YTZ-Cj-OlK" id="5Tw-W2-1hz"/>
@@ -384,8 +387,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캡스톤 앱 구현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWD-xs-3LE">
-                                                    <rect key="frame" x="45" y="8" width="97" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="45" y="8" width="91.5" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="gIR-el-Guv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -398,7 +404,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmT-xh-0dX">
-                                                    <rect key="frame" x="45" y="38.5" width="40.5" height="20.5"/>
+                                                    <rect key="frame" x="45" y="33" width="40.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -412,7 +418,7 @@
                                                 <constraint firstItem="KmM-oM-cLL" firstAttribute="top" secondItem="ZpF-NW-dp3" secondAttribute="top" constant="5" id="KL9-Aa-y65"/>
                                                 <constraint firstItem="X9C-gP-HNA" firstAttribute="bottom" secondItem="KmM-oM-cLL" secondAttribute="bottom" constant="-3" id="MaP-oD-KdL"/>
                                                 <constraint firstItem="kmT-xh-0dX" firstAttribute="leading" secondItem="FWD-xs-3LE" secondAttribute="leading" id="SJ4-qp-LrI"/>
-                                                <constraint firstItem="kmT-xh-0dX" firstAttribute="top" secondItem="FWD-xs-3LE" secondAttribute="bottom" constant="10" id="rQU-SB-nRw"/>
+                                                <constraint firstItem="kmT-xh-0dX" firstAttribute="top" secondItem="FWD-xs-3LE" secondAttribute="bottom" constant="7" id="rQU-SB-nRw"/>
                                                 <constraint firstItem="KmM-oM-cLL" firstAttribute="leading" secondItem="ZpF-NW-dp3" secondAttribute="leading" constant="15" id="vCm-cp-Y5a"/>
                                             </constraints>
                                         </collectionViewCellContentView>

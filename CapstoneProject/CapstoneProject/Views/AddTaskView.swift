@@ -11,4 +11,9 @@ public class AddTaskView: UIView {
     @IBOutlet public var backButton: UIButton!
     @IBOutlet public var taskNameTextField: UITextField!
     @IBOutlet public var addTaskButton: UIButton!
+    @IBOutlet public var stackFirstView: UIView!
+    @IBOutlet public var stackSecondView: UIView!
+    @IBOutlet public var dateTextField: UITextField!
+    @IBOutlet public var timeTextField: UITextField!
+    @IBOutlet public var expectedTimeTextField: UITextField!
 }

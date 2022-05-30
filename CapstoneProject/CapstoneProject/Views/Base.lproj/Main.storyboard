@@ -352,7 +352,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAF-6p-amF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="DqS-z8-8Oa"/>
             </objects>
-            <point key="canvasLocation" x="480.80000000000001" y="106.59670164917542"/>
+            <point key="canvasLocation" x="502" y="511"/>
         </scene>
         <!--Tomorrow Child View Controller-->
         <scene sceneID="tne-QT-ifu">

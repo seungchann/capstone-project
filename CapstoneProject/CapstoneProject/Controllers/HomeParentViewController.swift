@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import CoreData
 
 public class HomeParentViewController: BarPagerTabStripViewController {
     
@@ -33,6 +34,18 @@ public class HomeParentViewController: BarPagerTabStripViewController {
         self.settings.style.selectedBarBackgroundColor = UIColor.black
         super.viewDidLoad()
         setupAddTaskButton()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        let fetchResult = PersistenceManager.shared.fetch(request: request)
+        
+        fetchResult.flatMap {
+            print($0.name)
+            print($0.color)
+            print($0.expectedTime)
+        }
         
     }
     

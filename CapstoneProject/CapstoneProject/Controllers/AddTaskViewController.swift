@@ -20,6 +20,8 @@ public class AddTaskViewController: UIViewController {
     let expectedTimeDatePicker: UIDatePicker = UIDatePicker()
     let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
     
+    var tempTask: Task_ = Task_(name: "", tag: "", expectedTime: 0, dueDateStr: "", dueTimeStr: "", color: "")
+    
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,10 @@ public class AddTaskViewController: UIViewController {
         self.addTaskView.dateTextField.delegate = self
         self.addTaskView.timeTextField.delegate = self
         self.tapGesture.delegate = self
+        
+        // TO-DO : 태그와 컬러 찾아서 매치시키기
+        self.tempTask.tag = "과제"
+        self.tempTask.color = "#FF00FF"
         
         setupBackButton()
         setupAddTaskButton()
@@ -44,7 +50,11 @@ public class AddTaskViewController: UIViewController {
     
     private func setupAddTaskButton() {
         let action = UIAction { _ in
-            // TO-DO: 새로운 task 생성 후 HomeViewController로 넘겨주기
+            guard PersistenceManager.shared.insertTask(task: self.tempTask) else {
+                // TO-DO : 데이터 저장 실패 시 예외처리
+                print("데이터가 저장되지 않았습니다.")
+                return
+            }
             self.presentingViewController?.dismiss(animated: true)
         }
         self.addTaskView.addTaskButton.addAction(action, for: .touchUpInside)
@@ -62,17 +72,73 @@ public class AddTaskViewController: UIViewController {
         self.addTaskView.stackFirstView.layer.cornerRadius = 15
         self.addTaskView.stackSecondView.layer.cornerRadius = 15
     }
+    
+    private func setValueFromTextField() {
+        if self.addTaskView.taskNameTextField.isEditing {
+            tempTask.name = self.addTaskView.taskNameTextField.text ?? ""
+            print(tempTask.name)
+        }
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko-KR")
+        
+        if self.addTaskView.dateTextField.isEditing {
+            // CoreData에 저장
+            formatter.dateFormat = "yyyy-MM-dd"
+            tempTask.dueDateStr = formatter.string(from: calendarDatePicker.date)
+            
+            // View에 표현
+            formatter.dateFormat = "yyyy-MM-dd EEE"
+            self.addTaskView.dateTextField.text = formatter.string(from: calendarDatePicker.date)
+        }
+        
+        if self.addTaskView.timeTextField.isEditing {
+            // CoreData에 저장
+            formatter.dateFormat = " HH:mm"
+            tempTask.dueTimeStr = formatter.string(from: timeDatePicker.date)
+
+            // View에 표현
+            formatter.dateFormat = "a hh시 mm분"
+            self.addTaskView.timeTextField.text = formatter.string(from: timeDatePicker.date)
+        }
+        
+        if self.addTaskView.expectedTimeTextField.isEditing {
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            
+            var expectedMin: Int = 0
+            var expectedHour: Int = 0
+            
+            if expectedTimeDatePicker.countDownDuration == 60 {
+                expectedMin = 15
+            } else {
+                expectedMin = Int(round(expectedTimeDatePicker.countDownDuration / 60))
+            }
+            
+            self.tempTask.expectedTime = expectedMin
+            
+            if expectedMin > 60 {
+                expectedHour = Int(floor(Double(expectedMin / 60)))
+                expectedMin -= (expectedHour * 60)
+                self.addTaskView.expectedTimeTextField.text = "총 \(expectedHour)시간 \(expectedMin) 분"
+            } else {
+                self.addTaskView.expectedTimeTextField.text = "총 \(expectedMin) 분"
+            }
+        }
+    }
 }
 
 extension AddTaskViewController: UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     // TextField에서 다른 화면 터치 시, 키보드 dismiss.
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        setValueFromTextField()
         self.view.endEditing(true)
         return true
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        setValueFromTextField()
         textField.resignFirstResponder()
         return true
     }
@@ -143,29 +209,10 @@ extension AddTaskViewController {
     
     @objc
     func donePressed() {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko-KR")
-        
-        if self.addTaskView.dateTextField.isEditing {
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .none
-            self.addTaskView.dateTextField.text = formatter.string(from: calendarDatePicker.date)
-        }
-        
-        if self.addTaskView.timeTextField.isEditing {
-            formatter.dateStyle = .none
-            formatter.timeStyle = .short
-            self.addTaskView.timeTextField.text = formatter.string(from: timeDatePicker.date)
-        }
-        
-        if self.addTaskView.expectedTimeTextField.isEditing {
-            formatter.dateStyle = .none
-            formatter.timeStyle = .short
-            self.addTaskView.expectedTimeTextField.text = "\(expectedTimeDatePicker.countDownDuration / 60) 분"
-        }
-        
+        setValueFromTextField()
         self.view.endEditing(true)
     }
+    
     
     @objc
     func cancelPressed() {

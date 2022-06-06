@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xK7-dH-N53">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uwi-k8-iTJ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -588,9 +588,9 @@
                                 <rect key="frame" x="0.0" y="125" width="375" height="472"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wa8-sz-9qK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="440"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hyl-O6-zIN" userLabel="firstView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hyl-O6-zIN">
                                                 <rect key="frame" x="25" y="0.0" width="325" height="110"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89a-FD-bfa">
@@ -623,7 +623,7 @@
                                                     <constraint firstItem="7zD-F3-hdw" firstAttribute="top" secondItem="0xa-yb-WJ3" secondAttribute="top" id="mPz-FK-OH5"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuH-Fr-7aI" userLabel="secondView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuH-Fr-7aI">
                                                 <rect key="frame" x="25" y="130" width="325" height="110"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예상 필요시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G2-xz-ZSN">
@@ -648,15 +648,42 @@
                                                     <constraint firstItem="cJT-v5-pz2" firstAttribute="top" secondItem="9G2-xz-ZSN" secondAttribute="bottom" constant="20" id="jHg-Vh-XkP"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAM-bx-NqT">
+                                                <rect key="frame" x="25" y="260" width="325" height="180"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O시간  OO분  OO초" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqa-aU-5mm">
+                                                        <rect key="frame" x="61.5" y="40" width="202.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일했다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLh-0h-3UM">
+                                                        <rect key="frame" x="136.5" y="90" width="52" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Kqa-aU-5mm" firstAttribute="centerX" secondItem="FAM-bx-NqT" secondAttribute="centerX" id="CmG-s4-MOe"/>
+                                                    <constraint firstItem="rLh-0h-3UM" firstAttribute="top" secondItem="Kqa-aU-5mm" secondAttribute="bottom" constant="20" id="dHm-ZO-eBO"/>
+                                                    <constraint firstItem="rLh-0h-3UM" firstAttribute="centerX" secondItem="FAM-bx-NqT" secondAttribute="centerX" id="gZi-Ao-vfO"/>
+                                                    <constraint firstItem="Kqa-aU-5mm" firstAttribute="top" secondItem="FAM-bx-NqT" secondAttribute="top" constant="40" id="nMb-Pb-Ql3"/>
+                                                    <constraint firstAttribute="height" constant="180" id="uDl-V5-gKV"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.97647064920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="Hyl-O6-zIN" firstAttribute="top" secondItem="wa8-sz-9qK" secondAttribute="top" id="1HR-ba-T16"/>
-                                            <constraint firstAttribute="bottom" secondItem="nuH-Fr-7aI" secondAttribute="bottom" id="21J-qW-wL0"/>
                                             <constraint firstItem="nuH-Fr-7aI" firstAttribute="trailing" secondItem="Hyl-O6-zIN" secondAttribute="trailing" id="3r0-tU-1Y5"/>
+                                            <constraint firstItem="FAM-bx-NqT" firstAttribute="leading" secondItem="Hyl-O6-zIN" secondAttribute="leading" id="EcB-zm-cYh"/>
                                             <constraint firstAttribute="trailing" secondItem="Hyl-O6-zIN" secondAttribute="trailing" constant="25" id="P6c-gA-Lb5"/>
                                             <constraint firstItem="Hyl-O6-zIN" firstAttribute="leading" secondItem="wa8-sz-9qK" secondAttribute="leading" constant="25" id="S8N-GZ-1kL"/>
                                             <constraint firstItem="nuH-Fr-7aI" firstAttribute="leading" secondItem="Hyl-O6-zIN" secondAttribute="leading" id="Sre-od-twX"/>
+                                            <constraint firstItem="FAM-bx-NqT" firstAttribute="top" secondItem="nuH-Fr-7aI" secondAttribute="bottom" constant="20" id="g5q-TV-ImV"/>
+                                            <constraint firstItem="FAM-bx-NqT" firstAttribute="trailing" secondItem="Hyl-O6-zIN" secondAttribute="trailing" id="huP-9j-1O0"/>
                                             <constraint firstItem="nuH-Fr-7aI" firstAttribute="top" secondItem="Hyl-O6-zIN" secondAttribute="bottom" constant="20" id="t9M-cu-pGV"/>
                                         </constraints>
                                     </stackView>
@@ -705,8 +732,10 @@
                             <outlet property="dueDateLabel" destination="0xa-yb-WJ3" id="9rE-9m-lpw"/>
                             <outlet property="dueTimeLable" destination="7zD-F3-hdw" id="LtE-QT-xwB"/>
                             <outlet property="expectedTimeLabel" destination="cJT-v5-pz2" id="6ly-XF-BkA"/>
+                            <outlet property="progressTimeLabel" destination="Kqa-aU-5mm" id="S47-FJ-U82"/>
                             <outlet property="stackFirstView" destination="Hyl-O6-zIN" id="tGL-Wh-a6n"/>
                             <outlet property="stackSecondView" destination="nuH-Fr-7aI" id="bvx-lh-nrX"/>
+                            <outlet property="stackThirdView" destination="FAM-bx-NqT" id="vwD-dz-ypR"/>
                             <outlet property="startTaskButton" destination="5A1-dO-Ot8" id="Smh-cT-elM"/>
                             <outlet property="taskNameLabel" destination="dmn-wC-I9N" id="Eaj-um-q9O"/>
                         </connections>

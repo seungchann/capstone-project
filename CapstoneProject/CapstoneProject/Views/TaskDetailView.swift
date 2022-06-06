@@ -15,5 +15,7 @@ public class TaskDetailView: UIView {
     @IBOutlet public var expectedTimeLabel: UILabel!
     @IBOutlet public var stackFirstView: UIView!
     @IBOutlet public var stackSecondView: UIView!
+    @IBOutlet public var stackThirdView: UIView!
     @IBOutlet public var startTaskButton: UIButton!
+    @IBOutlet public var progressTimeLabel: UILabel!
 }

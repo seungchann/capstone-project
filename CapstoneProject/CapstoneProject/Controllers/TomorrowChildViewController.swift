@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import CoreData
 
 public class TomorrowChildViewController: UIViewController {
     
@@ -18,12 +19,29 @@ public class TomorrowChildViewController: UIViewController {
         return (view as! HomeChildView)
     }
     
+    let request: NSFetchRequest<Task> = Task.fetchRequest()
+    var taskList: [Task] = []
+    
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         homeChildView.taskCollectionView.delegate = self
         homeChildView.taskCollectionView.dataSource = self
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.taskList = PersistenceManager.shared.fetch(request: request)
+        
+        // For Debugging
+        taskList.flatMap {
+            print($0.name)
+            print($0.color)
+            print($0.expectedTime)
+        }
+        
+        self.homeChildView.taskCollectionView.reloadData()
     }
 }
 
@@ -34,15 +52,23 @@ public class TomorrowChildViewController: UIViewController {
 extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return taskList.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeTaskCell.identifier, for: indexPath) as! HomeTaskCell
        
-        cell.taskNameLabel.text = "Example Task"
-        cell.taskExpectedTimeLabel.text = "O 시간"
+        cell.taskNameLabel.text = self.taskList[indexPath.row].name
         
+        var expectedMin =  Int(self.taskList[indexPath.row].expectedTime)
+        var expectedHour = 0
+        if expectedMin > 60 {
+            expectedHour = Int(floor(Double(expectedMin / 60)))
+            expectedMin -= (expectedHour * 60)
+            cell.taskExpectedTimeLabel.text = "총 \(expectedHour)시간 \(expectedMin) 분"
+        } else {
+            cell.taskExpectedTimeLabel.text = "총 \(expectedMin) 분"
+        }
         
         return cell
     }
@@ -54,6 +80,6 @@ extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionVie
 
 extension TomorrowChildViewController: IndicatorInfoProvider {
     public func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "10시간치 남았다."
+        return ""
     }
 }

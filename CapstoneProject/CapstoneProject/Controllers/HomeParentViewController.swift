@@ -7,7 +7,6 @@
 
 import UIKit
 import XLPagerTabStrip
-import CoreData
 
 public class HomeParentViewController: BarPagerTabStripViewController {
     
@@ -36,18 +35,6 @@ public class HomeParentViewController: BarPagerTabStripViewController {
         setupAddTaskButton()
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        let request: NSFetchRequest<Task> = Task.fetchRequest()
-        let fetchResult = PersistenceManager.shared.fetch(request: request)
-        
-        fetchResult.flatMap {
-            print($0.name)
-            print($0.color)
-            print($0.expectedTime)
-        }
-        
-    }
     
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: TomorrowChildViewController.identifier)
@@ -68,14 +55,8 @@ public class HomeParentViewController: BarPagerTabStripViewController {
             addTaskViewController.modalPresentationStyle = .fullScreen
             self.present(addTaskViewController, animated: true, completion: nil)
         }
-        // 커스텀 이미지 적용 후 pointSize 수정
-        let image = UIImage(systemName: "plus.circle.fill")
-        let pointSize: CGFloat = 40
         
-        homeParentView.addTaskButton.setTitle("", for: .normal)
         homeParentView.addTaskButton.addAction(action, for: .touchUpInside)
-        homeParentView.addTaskButton.setImage(image, for: .normal)
-        homeParentView.addTaskButton.setPreferredSymbolConfiguration(.init(pointSize: pointSize, weight: .regular), forImageIn: .normal)
     }
     
     override public func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {

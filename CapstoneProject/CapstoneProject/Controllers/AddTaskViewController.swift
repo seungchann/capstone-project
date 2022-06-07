@@ -9,6 +9,15 @@ import UIKit
 
 public class AddTaskViewController: UIViewController {
     
+    enum ButtonState {
+        case initial
+        case assignment
+        case project
+        case exam
+        case quiz
+        case presentation
+    }
+    
     // MARK: - Instance Properties
     public var addTaskView: AddTaskView! {
         guard isViewLoaded else { return nil }
@@ -21,6 +30,7 @@ public class AddTaskViewController: UIViewController {
     let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
     
     var tempTask: Task_ = Task_(name: "", tag: "", expectedTime: 0, dueDateStr: "", dueTimeStr: "", color: 0)
+    var tempTag: ButtonState!
     
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
@@ -32,13 +42,19 @@ public class AddTaskViewController: UIViewController {
         
         // TO-DO : 태그와 컬러 찾아서 매치시키기
         self.tempTask.tag = "과제"
-        self.tempTask.color = 0x485DDA
+        self.tempTask.color = 0xFFFFFF
         
         setupBackButton()
         setupAddTaskButton()
         setKeyboardActions()
         setStackViewsCorners()
         setDataPickerView()
+        setCategoryButtons()
+    }
+    
+    override public func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tempTag = .initial
     }
     
     private func setupBackButton() {
@@ -153,7 +169,7 @@ extension AddTaskViewController: UITextFieldDelegate, UIGestureRecognizerDelegat
             if keyboardHeight > 300 {
                 self.view.frame.origin.y = -200
             } else {
-                self.view.frame.origin.y = -100
+                self.view.frame.origin.y = -150
             }
         }
     }
@@ -217,5 +233,75 @@ extension AddTaskViewController {
     @objc
     func cancelPressed() {
         self.view.endEditing(true)
+    }
+}
+
+// MARK: - 각 카테고리 버튼, 내부 Action 설정
+extension AddTaskViewController {
+    private func setCategoryButtons() {
+        let bgImageViews: [UIImageView] = [self.addTaskView.assignBtnBgImageView,
+                                           self.addTaskView.examBtnBgImageView,
+                                           self.addTaskView.projectBtnBgImageView,
+                                           self.addTaskView.quizBtnBgImageView,
+                                           self.addTaskView.presentationBtnBgImageView]
+        
+        // 체크박스 배경 초기 설정
+        bgImageViews.forEach { $0.layer.cornerRadius = 8 }
+        self.clearCheckMarks()
+        
+        // 각 Button마다 Action 설정
+        self.addTaskView.assignButton.addAction(UIAction { _ in
+            self.setCheckmarks(checkbuttonState: .assignment)
+        }, for: .touchUpInside)
+        
+        self.addTaskView.projectButton.addAction(UIAction { _ in
+            self.setCheckmarks(checkbuttonState: .project)
+        }, for: .touchUpInside)
+        
+        self.addTaskView.examButton.addAction(UIAction { _ in
+            self.setCheckmarks(checkbuttonState: .exam)
+        }, for: .touchUpInside)
+        
+        self.addTaskView.quizButton.addAction(UIAction { _ in
+            self.setCheckmarks(checkbuttonState: .quiz)
+        }, for: .touchUpInside)
+        
+        self.addTaskView.presentationButton.addAction(UIAction { _ in
+            self.setCheckmarks(checkbuttonState: .presentation)
+        }, for: .touchUpInside)
+    }
+    
+    // 탭한 버튼의 Checkmark만 표시해주는 함수
+    private func setCheckmarks(checkbuttonState: ButtonState) {
+        self.clearCheckMarks()
+        switch checkbuttonState {
+        case .initial:
+            break
+        case .assignment:
+            self.addTaskView.assignBtnCheckBoxImageView.isHidden = false
+            self.tempTag = .assignment
+        case .project:
+            self.addTaskView.projectBtnCheckBoxImageView.isHidden = false
+            self.tempTag = .project
+        case .exam:
+            self.addTaskView.examBtnCheckBoxImageView.isHidden = false
+            self.tempTag = .exam
+        case .quiz:
+            self.addTaskView.quizBtnCheckBoxImageView.isHidden = false
+            self.tempTag = .quiz
+        case .presentation:
+            self.addTaskView.presentationCheckBoxImageView.isHidden = false
+            self.tempTag = .presentation
+        }
+    }
+    
+    // 모든 체크박스를 해제하는 함수
+    private func clearCheckMarks() {
+        let checkMarkImageViews: [UIImageView] = [self.addTaskView.assignBtnCheckBoxImageView,
+                                                  self.addTaskView.projectBtnCheckBoxImageView,
+                                                  self.addTaskView.examBtnCheckBoxImageView,
+                                                  self.addTaskView.quizBtnCheckBoxImageView,
+                                                  self.addTaskView.presentationCheckBoxImageView]
+        checkMarkImageViews.forEach { $0.isHidden = true }
     }
 }

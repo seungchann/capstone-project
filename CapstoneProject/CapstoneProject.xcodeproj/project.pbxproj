@@ -11,6 +11,7 @@
 		641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641F2B30282E21860007C401 /* HomeTaskCell.swift */; };
 		642E449E284F101A00C04836 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E449C284F101A00C04836 /* Task+CoreDataProperties.swift */; };
 		642E449F284F101A00C04836 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E449D284F101A00C04836 /* Task+CoreDataClass.swift */; };
+		642E44A2284F150000C04836 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E44A1284F150000C04836 /* UIColor+Hex.swift */; };
 		6432B070283FCB1300563CA9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6432B06F283FCB1300563CA9 /* PersistenceManager.swift */; };
 		643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643478D4283167EE0038A932 /* HomeParentViewController.swift */; };
 		6456A67528460C80000C339F /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456A67428460C80000C339F /* TaskDetailView.swift */; };
@@ -36,6 +37,7 @@
 		641F2B30282E21860007C401 /* HomeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTaskCell.swift; sourceTree = "<group>"; };
 		642E449C284F101A00C04836 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "/Users/chan/Desktop/capstone-project/CapstoneProject/CapstoneProject/Models/Task+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		642E449D284F101A00C04836 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataClass.swift"; path = "/Users/chan/Desktop/capstone-project/CapstoneProject/CapstoneProject/Models/Task+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		642E44A1284F150000C04836 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6432B06F283FCB1300563CA9 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		643478D4283167EE0038A932 /* HomeParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParentViewController.swift; sourceTree = "<group>"; };
 		6456A67428460C80000C339F /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 				41F516136939B358E0E5823F /* Pods-CapstoneProject.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		642E44A0284F14E100C04836 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				642E44A1284F150000C04836 /* UIColor+Hex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		644D9BF42825403A000C80BB /* AppDelegate */ = {
@@ -155,6 +165,7 @@
 			children = (
 				644D9BF42825403A000C80BB /* AppDelegate */,
 				644D9BF828254089000C80BB /* Controllers */,
+				642E44A0284F14E100C04836 /* Extensions */,
 				644D9BF728254081000C80BB /* Models */,
 				644D9BF528254046000C80BB /* Resources */,
 				644D9BF628254056000C80BB /* Views */,
@@ -289,6 +300,7 @@
 				64BDC6132830EDA9004E00D3 /* AddTaskViewController.swift in Sources */,
 				6475840C2837870B00F7E1DD /* ThreeDaysChildViewController.swift in Sources */,
 				641F2B31282E21860007C401 /* HomeTaskCell.swift in Sources */,
+				642E44A2284F150000C04836 /* UIColor+Hex.swift in Sources */,
 				643478D5283167EE0038A932 /* HomeParentViewController.swift in Sources */,
 				6432B070283FCB1300563CA9 /* PersistenceManager.swift in Sources */,
 				64BDC6112830ED0C004E00D3 /* AddTaskView.swift in Sources */,

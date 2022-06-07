@@ -13,7 +13,7 @@ public struct Task_ {
     public var expectedTime: Int
     public var dueDateStr: String
     public var dueTimeStr: String
-    public var color: String
+    public var color: Int
     
     public func getDueDate() -> Date {
         let dateFormatter = DateFormatter()

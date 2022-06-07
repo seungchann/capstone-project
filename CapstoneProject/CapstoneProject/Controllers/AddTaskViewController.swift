@@ -20,7 +20,7 @@ public class AddTaskViewController: UIViewController {
     let expectedTimeDatePicker: UIDatePicker = UIDatePicker()
     let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
     
-    var tempTask: Task_ = Task_(name: "", tag: "", expectedTime: 0, dueDateStr: "", dueTimeStr: "", color: "")
+    var tempTask: Task_ = Task_(name: "", tag: "", expectedTime: 0, dueDateStr: "", dueTimeStr: "", color: 0)
     
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
@@ -32,7 +32,7 @@ public class AddTaskViewController: UIViewController {
         
         // TO-DO : 태그와 컬러 찾아서 매치시키기
         self.tempTask.tag = "과제"
-        self.tempTask.color = "#FF00FF"
+        self.tempTask.color = 0x485DDA
         
         setupBackButton()
         setupAddTaskButton()

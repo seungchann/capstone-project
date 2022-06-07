@@ -58,28 +58,59 @@ extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionVie
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeTaskCell.identifier, for: indexPath) as! HomeTaskCell
        
+        cell.taskBar.layer.cornerRadius = 8
+        cell.taskBar.backgroundColor = UIColor(rgb: Int(self.taskList[indexPath.row].color))
         cell.taskNameLabel.text = self.taskList[indexPath.row].name
+        
         
         var expectedMin =  Int(self.taskList[indexPath.row].expectedTime)
         var expectedHour = 0
         if expectedMin > 60 {
             expectedHour = Int(floor(Double(expectedMin / 60)))
             expectedMin -= (expectedHour * 60)
-            cell.taskExpectedTimeLabel.text = "총 \(expectedHour)시간 \(expectedMin) 분"
+            cell.taskExpectedTimeLabel.text = "\(expectedHour)시간 \(expectedMin) 분"
         } else {
-            cell.taskExpectedTimeLabel.text = "총 \(expectedMin) 분"
+            cell.taskExpectedTimeLabel.text = "\(expectedMin) 분"
         }
         
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 6)
+        return CGSize(width: self.view.bounds.width, height: 90)
     }
 }
 
 extension TomorrowChildViewController: IndicatorInfoProvider {
     public func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return ""
+    }
+}
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int, a: Int = 0xFF) {
+        self.init(
+            red: CGFloat(red) / 255.0,
+            green: CGFloat(green) / 255.0,
+            blue: CGFloat(blue) / 255.0,
+            alpha: CGFloat(a) / 25.0
+        )
+    }
+    
+    convenience init(rgb: Int) {
+        self.init(
+            red: (rgb >> 16) & 0xFF,
+            green: (rgb >> 16) & 0xFF,
+            blue: rgb & 0xFF
+        )
+    }
+    
+    convenience init(argb: Int) {
+        self.init(
+            red: (argb >> 16) & 0xFF,
+            green: (argb >> 16) & 0xFF,
+            blue: argb & 0xFF,
+            a: (argb >> 24) & 0xFF
+        )
     }
 }

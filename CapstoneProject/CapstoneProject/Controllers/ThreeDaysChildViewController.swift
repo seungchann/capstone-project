@@ -48,7 +48,7 @@ extension ThreeDaysChildViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 6)
+        return CGSize(width: self.view.bounds.width, height: 90)
     }
 }
 

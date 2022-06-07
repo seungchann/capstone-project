@@ -17,15 +17,15 @@ public class HomeParentViewController: BarPagerTabStripViewController {
     }
     
     let remainingDayLabels: [String] = ["내일까지",
-                                        "3일 뒤까지",
-                                        "일주일 뒤까지"]
+                                        "3일 안에",
+                                        "일주일 안에"]
     
-    let remainingExpectedTimeLabels: [String] = ["3시간",
-                                                 "5시간",
-                                                 "7시간"]
+    let remainingExpectedTimeLabels: [String] = ["3시간 더",
+                                                 "5시간 더",
+                                                 "7시간 더"]
     
-    let nextTabDayLabels: [String] = ["3일 뒤까지",
-                                      "일주일 뒤까지",
+    let nextTabDayLabels: [String] = ["3일 안에",
+                                      "일주일 안에",
                                       ""]
     
     // MARK: - View Lifecycle

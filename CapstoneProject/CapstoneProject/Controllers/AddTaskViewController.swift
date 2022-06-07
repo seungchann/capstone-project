@@ -251,47 +251,54 @@ extension AddTaskViewController {
         
         // 각 Button마다 Action 설정
         self.addTaskView.assignButton.addAction(UIAction { _ in
-            self.setCheckmarks(checkbuttonState: .assignment)
+            self.categoryButtonTapped(checkbuttonState: .assignment)
         }, for: .touchUpInside)
         
         self.addTaskView.projectButton.addAction(UIAction { _ in
-            self.setCheckmarks(checkbuttonState: .project)
+            self.categoryButtonTapped(checkbuttonState: .project)
         }, for: .touchUpInside)
         
         self.addTaskView.examButton.addAction(UIAction { _ in
-            self.setCheckmarks(checkbuttonState: .exam)
+            self.categoryButtonTapped(checkbuttonState: .exam)
         }, for: .touchUpInside)
         
         self.addTaskView.quizButton.addAction(UIAction { _ in
-            self.setCheckmarks(checkbuttonState: .quiz)
+            self.categoryButtonTapped(checkbuttonState: .quiz)
         }, for: .touchUpInside)
         
         self.addTaskView.presentationButton.addAction(UIAction { _ in
-            self.setCheckmarks(checkbuttonState: .presentation)
+            self.categoryButtonTapped(checkbuttonState: .presentation)
         }, for: .touchUpInside)
     }
     
-    // 탭한 버튼의 Checkmark만 표시해주는 함수
-    private func setCheckmarks(checkbuttonState: ButtonState) {
+    // 탭한 버튼의 Checkmark를 표시해주고, tempTask에 category 정보를 넣어줌
+    private func categoryButtonTapped(checkbuttonState: ButtonState) {
+        let categoryColors: [String: Int] = ["Blue":0x485DDA, "Lighter Green":0x44AF12, "Deeper Green":0x44AF12, "Sky Blue":0x3197F4, "Emerald":0x48BEC6]
+        
         self.clearCheckMarks()
         switch checkbuttonState {
         case .initial:
             break
         case .assignment:
             self.addTaskView.assignBtnCheckBoxImageView.isHidden = false
-            self.tempTag = .assignment
+            self.tempTask.tag = "과제"
+            self.tempTask.color = categoryColors["Blue"] ?? 0xFFFFFF
         case .project:
             self.addTaskView.projectBtnCheckBoxImageView.isHidden = false
-            self.tempTag = .project
+            self.tempTask.tag = "프로젝트"
+            self.tempTask.color = categoryColors["Lighter Green"] ?? 0xFFFFFF
         case .exam:
             self.addTaskView.examBtnCheckBoxImageView.isHidden = false
-            self.tempTag = .exam
+            self.tempTask.tag = "시험준비"
+            self.tempTask.color = categoryColors["Deeper Green"] ?? 0xFFFFFF
         case .quiz:
             self.addTaskView.quizBtnCheckBoxImageView.isHidden = false
-            self.tempTag = .quiz
+            self.tempTask.tag = "퀴즈준비"
+            self.tempTask.color = categoryColors["Sky Blue"] ?? 0xFFFFFF
         case .presentation:
             self.addTaskView.presentationCheckBoxImageView.isHidden = false
-            self.tempTag = .presentation
+            self.tempTask.tag = "발표준비"
+            self.tempTask.color = categoryColors["Emerald"] ?? 0xFFFFFF
         }
     }
     

@@ -20,7 +20,7 @@ extension UIColor {
     convenience init(rgb: Int) {
         self.init(
             red: (rgb >> 16) & 0xFF,
-            green: (rgb >> 16) & 0xFF,
+            green: (rgb >> 8) & 0xFF,
             blue: rgb & 0xFF
         )
     }
@@ -28,7 +28,7 @@ extension UIColor {
     convenience init(argb: Int) {
         self.init(
             red: (argb >> 16) & 0xFF,
-            green: (argb >> 16) & 0xFF,
+            green: (argb >> 8) & 0xFF,
             blue: argb & 0xFF,
             a: (argb >> 24) & 0xFF
         )

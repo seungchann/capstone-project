@@ -59,8 +59,11 @@ extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeTaskCell.identifier, for: indexPath) as! HomeTaskCell
        
         cell.taskBar.layer.cornerRadius = 8
+        cell.taskBar.widthAnchor.constraint(equalToConstant: CGFloat(self.taskList[indexPath.row].expectedTime) * 2).isActive = true
+        
         cell.taskBar.backgroundColor = UIColor(rgb: Int(self.taskList[indexPath.row].color))
         cell.taskNameLabel.text = self.taskList[indexPath.row].name
+
         
         
         var expectedMin =  Int(self.taskList[indexPath.row].expectedTime)
@@ -69,6 +72,8 @@ extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionVie
             expectedHour = Int(floor(Double(expectedMin / 60)))
             expectedMin -= (expectedHour * 60)
             cell.taskExpectedTimeLabel.text = "\(expectedHour)시간 \(expectedMin) 분"
+        } else if expectedMin < 30 {
+            cell.taskExpectedTimeLabel.text = ""
         } else {
             cell.taskExpectedTimeLabel.text = "\(expectedMin) 분"
         }

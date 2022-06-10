@@ -32,6 +32,7 @@ public class TaskDetailViewController: UIViewController {
         super.viewDidLoad()
         setStackViewsCorners()
         setupLabels()
+        setupTagButton()
         setupBackButton()
         setupStartTaskButton()
     }
@@ -39,6 +40,15 @@ public class TaskDetailViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.taskDetailView.stackThirdView.isHidden = true
+    }
+    
+    private func setupTagButton() {
+        self.taskDetailView.tagBackgroundImageView.layer.cornerRadius = 7
+        self.taskDetailView.tagBackgroundImageView.layer.borderWidth = 2
+        self.taskDetailView.tagBackgroundImageView.layer.borderColor = UIColor(rgb: Int(self.tempTask.color)).cgColor
+        self.taskDetailView.tagBackgroundImageView.backgroundColor = .white
+        self.taskDetailView.tagNameLabel.textColor = UIColor(rgb: Int(self.tempTask.color))
+        self.taskDetailView.tagNameLabel.text = self.tempTask.tag
     }
     
     private func setupLabels() {

@@ -778,7 +778,7 @@
         <!--Task Detail View Controller-->
         <scene sceneID="sNr-aq-Wv9">
             <objects>
-                <viewController id="uwi-k8-iTJ" customClass="TaskDetailViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="taskDetailViewController" id="uwi-k8-iTJ" customClass="TaskDetailViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xbV-yr-hFJ" customClass="TaskDetailView" customModule="CapstoneProject" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

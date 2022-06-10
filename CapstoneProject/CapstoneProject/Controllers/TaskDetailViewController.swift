@@ -30,6 +30,7 @@ public class TaskDetailViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setStackViewsCorners()
+        setupBackButton()
         setupStartTaskButton()
         
     }
@@ -41,8 +42,7 @@ public class TaskDetailViewController: UIViewController {
     
     private func setupBackButton() {
         let action = UIAction { _ in
-            // 뒤로가기 연결
-            return
+            self.presentingViewController?.dismiss(animated: true)
         }
         self.taskDetailView.backButton.addAction(action, for: .touchUpInside)
     }
@@ -66,8 +66,10 @@ public class TaskDetailViewController: UIViewController {
             case .start:
                 self.taskDetailView.startTaskButton.setTitle("돌아가기", for: .normal)
                 self.timer.invalidate()
+                self.buttonState = .stop
                 
             case .stop:
+                self.presentingViewController?.dismiss(animated: true)
                 return
                 
             }

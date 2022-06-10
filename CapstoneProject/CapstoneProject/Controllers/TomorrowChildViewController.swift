@@ -64,8 +64,6 @@ extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionVie
         cell.taskBar.backgroundColor = UIColor(rgb: Int(self.taskList[indexPath.row].color))
         cell.taskNameLabel.text = self.taskList[indexPath.row].name
 
-        
-        
         var expectedMin =  Int(self.taskList[indexPath.row].expectedTime)
         var expectedHour = 0
         if expectedMin > 60 {
@@ -83,6 +81,13 @@ extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionVie
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width, height: 90)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let taskDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "taskDetailViewController") as? TaskDetailViewController else { return }
+        taskDetailViewController.modalTransitionStyle = .coverVertical
+        taskDetailViewController.modalPresentationStyle = .fullScreen
+        self.present(taskDetailViewController, animated: true, completion: nil)
     }
 }
 

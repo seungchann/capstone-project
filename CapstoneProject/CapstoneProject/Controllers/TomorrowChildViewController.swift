@@ -87,7 +87,11 @@ extension TomorrowChildViewController: UICollectionViewDelegate, UICollectionVie
         guard let taskDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "taskDetailViewController") as? TaskDetailViewController else { return }
         taskDetailViewController.modalTransitionStyle = .coverVertical
         taskDetailViewController.modalPresentationStyle = .fullScreen
+        taskDetailViewController.tempTask = self.taskList[indexPath.row]
+        
+        self.navigationController?.pushViewController(taskDetailViewController, animated: true)
         self.present(taskDetailViewController, animated: true, completion: nil)
+        
     }
 }
 

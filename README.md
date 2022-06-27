@@ -5,4 +5,4 @@
 ## Environment  
 * Xcode 13.4  
 * iOS 15.4
-* iPhone SE  
+* iPhone SE2  

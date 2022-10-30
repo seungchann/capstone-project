@@ -24,14 +24,17 @@ public class TaskDetailViewController: UIViewController {
     var buttonState: ButtonStatus = .initial
     private var timer: Timer!
     private var startTime: Date!
+    public var tempTask: Task!
     
     
     // MARK: - View Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
         setStackViewsCorners()
+        setupLabels()
+        setupTagButton()
+        setupBackButton()
         setupStartTaskButton()
-        
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -39,10 +42,49 @@ public class TaskDetailViewController: UIViewController {
         self.taskDetailView.stackThirdView.isHidden = true
     }
     
+    private func setupTagButton() {
+        self.taskDetailView.tagBackgroundImageView.layer.cornerRadius = 7
+        self.taskDetailView.tagBackgroundImageView.layer.borderWidth = 2
+        self.taskDetailView.tagBackgroundImageView.layer.borderColor = UIColor(rgb: Int(self.tempTask.color)).cgColor
+        self.taskDetailView.tagBackgroundImageView.backgroundColor = .white
+        self.taskDetailView.tagNameLabel.textColor = UIColor(rgb: Int(self.tempTask.color))
+        self.taskDetailView.tagNameLabel.text = self.tempTask.tag
+    }
+    
+    private func setupLabels() {
+        self.taskDetailView.taskNameLabel.text = tempTask.name
+        
+        var expectedMin = Int(self.tempTask.expectedTime)
+        var expectedHour: Int = 0
+        
+        if expectedMin > 60 {
+            expectedHour = Int(floor(Double(expectedMin / 60)))
+            expectedMin -= (expectedHour * 60)
+            if expectedMin == 0 {
+                self.taskDetailView.expectedTimeLabel.text = "\(expectedHour)시간"
+            } else {
+                self.taskDetailView.expectedTimeLabel.text = "\(expectedHour)시간 \(expectedMin) 분"
+            }
+            
+        } else {
+            self.taskDetailView.expectedTimeLabel.text = "\(expectedMin) 분"
+        }
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko-KR")
+        
+        // View에 표현
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        self.taskDetailView.dueDateLabel.text = formatter.string(from: self.tempTask.dueDate ?? Date())
+        
+        formatter.dateFormat = "a hh시 mm분"
+        self.taskDetailView.dueTimeLable.text = formatter.string(from: self.tempTask.dueDate ?? Date())
+        
+    }
+    
     private func setupBackButton() {
         let action = UIAction { _ in
-            // 뒤로가기 연결
-            return
+            self.presentingViewController?.dismiss(animated: true)
         }
         self.taskDetailView.backButton.addAction(action, for: .touchUpInside)
     }
@@ -66,8 +108,10 @@ public class TaskDetailViewController: UIViewController {
             case .start:
                 self.taskDetailView.startTaskButton.setTitle("돌아가기", for: .normal)
                 self.timer.invalidate()
+                self.buttonState = .stop
                 
             case .stop:
+                self.presentingViewController?.dismiss(animated: true)
                 return
                 
             }

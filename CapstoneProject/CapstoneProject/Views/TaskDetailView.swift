@@ -18,4 +18,7 @@ public class TaskDetailView: UIView {
     @IBOutlet public var stackThirdView: UIView!
     @IBOutlet public var startTaskButton: UIButton!
     @IBOutlet public var progressTimeLabel: UILabel!
+    @IBOutlet public var tagBackgroundImageView: UIImageView!
+    @IBOutlet public var tagNameLabel: UILabel!
+    
 }
